@@ -11074,7 +11074,7 @@ local LinkGroup = json:decode(https.request('https://api.telegram.org/bot'..Toke
 if LinkGroup.ok == true then
 local Text = '✦︙Link Group ↬ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nᅠ❨ '..GetLink..' ❩ '
 keyboard = {} 
-keyboard.inline_keyboard = {{{text= Get_Chat.title,url="GetLink}}}
+keyboard.inline_keyboard = {{{text= Get_Chat.title,url="GetLink"}}}
 local msg_id = Msg_id/2097152/0.5
 return https.request("https://api.telegram.org/bot"..Token..'/editMessageText?chat_id='..ChatId..'&message_id='..msg_id..'&text=' .. URL.escape(Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
