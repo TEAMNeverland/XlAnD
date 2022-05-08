@@ -4963,8 +4963,8 @@ for k,v in pairs(zx.ok) do
 i = i + 1
 t = t..i.."-  "..v.." \n"
 end
-return LuaTele.sendText(msg_chat_id,msg_id, t..'*ٴ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ٴ*\n✦︙→  [‹TeAmXlAnD ›](t.me/TeAm_XlAnD) ',"md",true)
-end
+keyboard = {}
+keyboard.inline_keyboard = {{{text = '‹ TeAmXlAnD ›', url = "https://t.me/TeAm_XlAnD"}}}
 
 if text == "تعطيل الابراج" then
 if ChannelJoin(msg) == false then
