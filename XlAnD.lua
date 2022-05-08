@@ -6887,8 +6887,8 @@ Redis:del(TheXlAnD.."XlAnD:Group:Link"..msg_chat_id)
 return LuaTele.sendText(msg_chat_id,msg_id,"✦┇تم مسح الرابط ","md",true)             
 end
 if text == "الرابط" then
-if not Redis:get(itsXlAnD.."XlAnD:Status:Link"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تعطيل جلب الرابط من قبل الادمنيه","md",true)
+if not Redis:get(TheXlAnD.."XlAnD:Status:Link"..msg_chat_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"✦︙تم تعطيل جلب الرابط من قبل الادمنيه","md",true)
 end 
 local reply_markup = LuaTele.replyMarkup{ 
 type = 'inline',
@@ -6900,11 +6900,11 @@ data = {
 { text = '‹ اخفاء الاوامر ›', data =msg.sender.user_id..'/'.. 'delAmr' }
  },
  { 
-{ text = '‹ 𝖲𝗈U𝗋C𝖾 MeLaNo  ›', url = 't.me/qqoqqd' }, 
+{ text = '‹ TeAmXlAnD  ›', url = 't.me/TeAm_XlAnD' }, 
  },
  }
  }
- return LuaTele.sendText(msg_chat_id,msg_id,'*⌔︙اختر نوع الرابط الذي تريده*',"md",false, false, false, false, reply_markup)
+ return LuaTele.sendText(msg_chat_id,msg_id,'*✦︙اختر نوع الرابط الذي تريده*',"md",false, false, false, false, reply_markup)
 end
 -- Alsh --
 if text == 'غادر' then
