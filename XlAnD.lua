@@ -11062,9 +11062,9 @@ if Text and Text:match('(%d+)/LinKTexT') then
 local UserId = Text:match('(%d+)/LinKTexT')
 if tonumber(IdUser) == tonumber(UserId) then 
 local Get_Chat = LuaTele.getChat(data.chat_id) 
-local GetLink = Redis:get(TheXlAnD.."XlAnD:Group:Link"..data.chat_id) 
+local GetLink = Redis:get(itsXlAnD.."XlAnD:Group:Link"..data.chat_id) 
 if GetLink then
-local Text = '✦︙Link Group ↬ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nᅠ❨ '..GetLink..' ❩ '
+local Text = '⌔︙Link Group ↬ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nᅠ❨ '..GetLink..' ❩ '
 keyboard = {} 
 keyboard.inline_keyboard = {{{text= Get_Chat.title, url=GetLink}}}
 local msg_id = Msg_id/2097152/0.5
@@ -11072,9 +11072,9 @@ return https.request("https://api.telegram.org/bot"..Token..'/editMessageText?ch
 else
 local LinkGroup = json:decode(https.request('https://api.telegram.org/bot'..Token..'/exportChatInviteLink?chat_id='..data.chat_id))
 if LinkGroup.ok == true then
-local Text = '✦︙Link Group ↬ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nᅠ❨ '..GetLink..' ❩ '
+local Text = '⌔︙Link Group ↬ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nᅠ❨ '..LinkGroup.result..' ❩ '
 keyboard = {} 
-keyboard.inline_keyboard = {{{text= Get_Chat.title,url=GetLink}}}
+keyboard.inline_keyboard = {{{text= Get_Chat.title,url=LinkGroup.result}}}
 local msg_id = Msg_id/2097152/0.5
 return https.request("https://api.telegram.org/bot"..Token..'/editMessageText?chat_id='..ChatId..'&message_id='..msg_id..'&text=' .. URL.escape(Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
@@ -11087,19 +11087,19 @@ if Text and Text:match('(%d+)/LinKOnla') then
 local UserId = Text:match('(%d+)/LinKOnla')
 if tonumber(IdUser) == tonumber(UserId) then 
 local Get_Chat = LuaTele.getChat(data.chat_id) 
-local GetLink = Redis:get(TheXlAnD.."XlAnD:Group:Link"..data.chat_id) 
+local GetLink = Redis:get(itsXlAnD.."XlAnD:Group:Link"..data.chat_id) 
 if GetLink then
-local Text = '✦︙Link Group ↬ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nᅠᅠᅠᅠ❨ ['..Get_Chat.title.. ']('..GetLink..') ❩ '
+local Text = '⌔︙Link Group ↬ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nᅠᅠᅠᅠ❨ ['..Get_Chat.title.. ']('..GetLink..') ❩ '
 keyboard = {} 
-keyboard.inline_keyboard = {{{text = URL.escape(ta.title_),url=link}}}
+keyboard.inline_keyboard = {{{text= Get_Chat.title, url=GetLink}}}
 local msg_id = Msg_id/2097152/0.5
 return https.request("https://api.telegram.org/bot"..Token..'/editMessageText?chat_id='..ChatId..'&message_id='..msg_id..'&text=' .. URL.escape(Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 else
 local LinkGroup = json:decode(https.request('https://api.telegram.org/bot'..Token..'/exportChatInviteLink?chat_id='..data.chat_id))
 if LinkGroup.ok == true then
-local Text = '✦︙Link Group ↬ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nᅠᅠᅠᅠ❨ ['..Get_Chat.title.. ']('..LinkGroup.result..') ❩ '
+local Text = '⌔︙Link Group ↬ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nᅠᅠᅠᅠ❨ ['..Get_Chat.title.. ']('..LinkGroup.result..') ❩ '
 keyboard = {} 
-keyboard.inline_keyboard = {{{text = URL.escape(ta.title_),url=linkgpp.result}}}
+keyboard.inline_keyboard = {{{text= Get_Chat.title,url= LinkGroup.result}}}
 local msg_id = Msg_id/2097152/0.5
 return https.request("https://api.telegram.org/bot"..Token..'/editMessageText?chat_id='..ChatId..'&message_id='..msg_id..'&text=' .. URL.escape(Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
